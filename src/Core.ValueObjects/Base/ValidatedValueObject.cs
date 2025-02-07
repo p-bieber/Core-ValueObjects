@@ -21,12 +21,15 @@ public abstract class ValidatedValueObject<T>
     /// Initializes a new instance of the <see cref="ValidatedValueObject{T}"/> class.
     /// </summary>
     /// <param name="value">The value to be validated.</param>
-    /// <param name="throwExceptionOnFailure">Indicates whether to throw an exception if validation fails. Default is true.</param>
-    protected ValidatedValueObject(T value, bool throwExceptionOnFailure = true)
+    /// <param name="validateInConstructor">Indicates whether validation should be performed in the constructor. Default is true.</param>
+    protected ValidatedValueObject(T value, bool validateInConstructor = true)
         : base(value)
     {
         AddRegisteredValidators();
-        _ = Validate(value, throwExceptionOnFailure);
+        if (validateInConstructor)
+        {
+            _ = Validate(value, true);  // Assuming you still want to throw an exception on failure by default
+        }
     }
 
     private void AddRegisteredValidators()
@@ -75,12 +78,15 @@ public abstract class ValidatedValueObject<T1, T2>
     /// </summary>
     /// <param name="value1">The first value to be validated.</param>
     /// <param name="value2">The second value to be validated.</param>
-    /// <param name="throwExceptionOnFailure">Indicates whether to throw an exception if validation fails. Default is true.</param>
-    protected ValidatedValueObject(T1 value1, T2 value2, bool throwExceptionOnFailure = true)
+    /// <param name="validateInConstructor">Indicates whether validation should be performed in the constructor. Default is true.</param>
+    protected ValidatedValueObject(T1 value1, T2 value2, bool validateInConstructor = true)
         : base(value1, value2)
     {
         AddRegisteredValidators();
-        _ = Validate(value1, value2, throwExceptionOnFailure);
+        if (validateInConstructor)
+        {
+            _ = Validate(value1, value2, true);  // Assuming you still want to throw an exception on failure by default
+        }
     }
 
     private void AddRegisteredValidators()
@@ -148,12 +154,15 @@ public abstract class ValidatedValueObject<T1, T2, T3>
     /// <param name="value1">The first value to be validated.</param>
     /// <param name="value2">The second value to be validated.</param>
     /// <param name="value3">The third value to be validated.</param>
-    /// <param name="throwExceptionOnFailure">Indicates whether to throw an exception if validation fails. Default is true.</param>
-    protected ValidatedValueObject(T1 value1, T2 value2, T3 value3, bool throwExceptionOnFailure = true)
+    /// <param name="validateInConstructor">Indicates whether validation should be performed in the constructor. Default is true.</param>
+    protected ValidatedValueObject(T1 value1, T2 value2, T3 value3, bool validateInConstructor = true)
         : base(value1, value2, value3)
     {
         AddRegisteredValidators();
-        _ = Validate(value1, value2, value3, throwExceptionOnFailure);
+        if (validateInConstructor)
+        {
+            _ = Validate(value1, value2, value3, true);  // Assuming you still want to throw an exception on failure by default
+        }
     }
 
     private void AddRegisteredValidators()
@@ -238,12 +247,15 @@ public abstract class ValidatedValueObject<T1, T2, T3, T4>
     /// <param name="value2">The second value to be validated.</param>
     /// <param name="value3">The third value to be validated.</param>
     /// <param name="value4">The fourth value to be validated.</param>
-    /// <param name="throwExceptionOnFailure">Indicates whether to throw an exception if validation fails. Default is true.</param>
-    protected ValidatedValueObject(T1 value1, T2 value2, T3 value3, T4 value4, bool throwExceptionOnFailure = true)
+    /// <param name="validateInConstructor">Indicates whether validation should be performed in the constructor. Default is true.</param>
+    protected ValidatedValueObject(T1 value1, T2 value2, T3 value3, T4 value4, bool validateInConstructor = true)
         : base(value1, value2, value3, value4)
     {
         AddRegisteredValidators();
-        _ = Validate(value1, value2, value3, value4, throwExceptionOnFailure);
+        if (validateInConstructor)
+        {
+            _ = Validate(value1, value2, value3, value4, true);  // Assuming you still want to throw an exception on failure by default
+        }
     }
 
     private void AddRegisteredValidators()
@@ -344,12 +356,15 @@ public abstract class ValidatedValueObject<T1, T2, T3, T4, T5>
     /// <param name="value3">The third value to be validated.</param>
     /// <param name="value4">The fourth value to be validated.</param>
     /// <param name="value5">The fifth value to be validated.</param>
-    /// <param name="throwExceptionOnFailure">Indicates whether to throw an exception if validation fails. Default is true.</param>
-    protected ValidatedValueObject(T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, bool throwExceptionOnFailure = true)
+    /// <param name="validateInConstructor">Indicates whether validation should be performed in the constructor. Default is true.</param>
+    protected ValidatedValueObject(T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, bool validateInConstructor = true)
         : base(value1, value2, value3, value4, value5)
     {
         AddRegisteredValidators();
-        _ = Validate(value1, value2, value3, value4, value5, throwExceptionOnFailure);
+        if (validateInConstructor)
+        {
+            _ = Validate(value1, value2, value3, value4, value5, true);  // Assuming you still want to throw an exception on failure by default
+        }
     }
 
     private void AddRegisteredValidators()
